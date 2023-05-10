@@ -139,10 +139,10 @@
 }
 .containerIframeBody iframe {
   position: relative;
-  width: 35%;
+  width: 50%;
 
   cursor: pointer;
-  height: 35vh;
+  height: 40vh;
 }
 
 .containerIframeBody span{
