@@ -87,7 +87,7 @@ async function getIndexData(setUserData, date, minDate, setUserSuccess) {
   let arr3 = ['BannerNotas1', 'BannerNotas2', 'BannerNotas3', 'BannerNotas4']
 
 
-
+             
 
 
   get(query(ref(db, 'login')))
