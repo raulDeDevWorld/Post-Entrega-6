@@ -117,7 +117,7 @@ async function getIndexData(setUserData, date, minDate, setUserSuccess) {
 
   arr2.map((i) => {
     // get(query(ref(db, i),  orderByChild('dateInit'), endBefore(date.toString())))
-    get(query(ref(db, i), limitToLast(10), orderByChild('dateFinish'), endBefore(minDate? minDate: nowaday),))
+    get(query(ref(db, i), limitToLast(10), orderByChild('dateFinish'), startAt(minDate? minDate: nowaday),))
 
       .then((snapshot) => {
         if (snapshot.exists()) {
@@ -148,7 +148,7 @@ async function getIndexData(setUserData, date, minDate, setUserSuccess) {
     console.log(parseInt(date))
     // get(query(ref(db, `${i}/Posts`), limitToLast(10), orderByChild('fecha'), startAt(minDate), endAt(date)))
 
-     get(query(ref(db, `${i}/Posts`), limitToLast(10), orderByChild('fecha'), startAt(minDate), startAt(date)))
+     get(query(ref(db, `${i}/Posts`), limitToLast(10), orderByChild('fecha'), startAt(minDate), endAt(date)))
     .then(async (snapshot) => {
 
         if (snapshot.exists()) {
