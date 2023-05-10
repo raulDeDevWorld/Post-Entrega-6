@@ -62,17 +62,13 @@ function Home() {
 
           <div className={styles.gridImages}>
 
-            {Object.keys(postsIMG).map((i, index) => {
-              if (i.split('/')[0].includes('Banners')) {
-                return
-              }
+            {Object.keys(userDB.inicio).map((i, index) => {
+     
               return <div className={styles.image} key={index}>
-                <Link href={i.split('/')[0].includes('Banners') == false && userDB[i.split('/')[0]] && userDB[i.split('/')[0]].Posts && userDB[i.split('/')[0]].Posts[i.split('/')[1]] && userDB[i.split('/')[0]].Posts[i.split('/')[1]].enlace ? userDB[i.split('/')[0]]["Posts"][i.split('/')[1]]['enlace'] : '#'} legacyBehavior>
+                <Link href={userDB.inicio[i].enlace} legacyBehavior>
                   <a target='_blank'>
-                    <img className={styles.image} src={postsIMG[i]} alt="img" />
-                    {/* {console.log(i.split('/')[1])} */}
-                    {console.log(i.split('/')[0].includes('Banners') == false && userDB[i.split('/')[0]] && userDB[i.split('/')[0]].Posts && userDB[i.split('/')[0]].Posts[i.split('/')[1]] && userDB[i.split('/')[0]].Posts[i.split('/')[1]].description && userDB[i.split('/')[0]].Posts[i.split('/')[1]].description)}
-                    <span className={styles.description}>{i.split('/')[0].includes('Banners') == false && userDB[i.split('/')[0]] && userDB[i.split('/')[0]].Posts && userDB[i.split('/')[0]].Posts[i.split('/')[1]] && userDB[i.split('/')[0]].Posts[i.split('/')[1]].description && userDB[i.split('/')[0]].Posts[i.split('/')[1]].description}</span>
+                    <img className={styles.image} src={userDB.inicio[i].url} alt="img" />
+                    <span className={styles.description}>{userDB.inicio[i].description}</span>
                   </a>
                 </Link >
               </div>
