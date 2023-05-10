@@ -65,7 +65,7 @@ function Home() {
             {userDB && userDB.inicio && Object.keys(userDB.inicio).map((i, index) => {
      
               return <div className={styles.image} key={index}>
-                <Link href={userDB.inicio[i].enlace} legacyBehavior>
+                <Link href='#' legacyBehavior>
                   <a target='_blank'>
                     <img className={styles.image} src={userDB.inicio[i].url} alt="img" />
                     <span className={styles.description}>{userDB.inicio[i].description}</span>
