@@ -62,7 +62,7 @@ function Home() {
 
           <div className={styles.gridImages}>
 
-            {Object.keys(userDB.inicio).map((i, index) => {
+            {userDB && userDB.inicio && Object.keys(userDB.inicio).map((i, index) => {
      
               return <div className={styles.image} key={index}>
                 <Link href={userDB.inicio[i].enlace} legacyBehavior>
