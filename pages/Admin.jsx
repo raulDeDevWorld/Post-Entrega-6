@@ -135,7 +135,7 @@ function Admin() {
   )
 }
 
-export default WithAuth(Admin)
+export default WithAuth(Admin) 
 
 
 
