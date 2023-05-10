@@ -62,13 +62,13 @@ function Home() {
 
           <div className={styles.gridImages}>
 
-            {userDB && userDB.inicio && Object.keys(userDB.inicio).map((i, index) => {
+            {userDB && userDB.inicio && Object.keys(userDB.inicio.Posts).map((i, index) => {
      
               return <div className={styles.image} key={index}>
                 <Link href='#' legacyBehavior>
                   <a target='_blank'>
-                    <img className={styles.image} src={userDB.inicio[i].url} alt="img" />
-                    <span className={styles.description}>{userDB.inicio[i].description}</span>
+                    <img className={styles.image} src={userDB.inicio.Posts[i].url} alt="img" />
+                    <span className={styles.description}>{userDB.inicio.Posts[i].description}</span>
                   </a>
                 </Link >
               </div>
